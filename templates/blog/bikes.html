@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <div class="card-group">
+ {% for bike in bikes %}
+  <div class="card">
+    <img class="card-img-top" src='blog/static/default.png', alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ bike.name}}</h5>
+      <p class="card-text"> {{ bike.type}}</p>
+      <p class="card-text"><small class="text-muted">Rok produkcji {{ bike.production_year }}</small></p>
+        <p class="card-text" style="font-weight: bold"><small class="text-muted">Cena : {{ bike.price }} zł</small></p>
+        <p class="card-text"><small class="text-muted">Waga : {{ bike.weight }}     Rozmiar Koła : {{ bike.wheel_size }}</small></p>
+        <p class="card-text"><small class="text-muted">Pozostało : {{ bike.amount }}</small></p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}
