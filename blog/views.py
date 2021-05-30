@@ -39,7 +39,7 @@ def rent(request):
     return render(request,'blog/rent.html',{'title':'Rent'})
 
 def profile(request):
-    return render(request,'blog/profile.html',{'title':'Profile'})
+    return render(request, 'blog/../templates/users/profile.html', {'title': 'Profile'})
 
 def cart(request):
     return render(request,'blog/cart.html',{'title':'Cart'})

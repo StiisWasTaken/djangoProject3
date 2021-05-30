@@ -84,13 +84,16 @@
         </li>
 
       </ul>
-      <!-- Left links -->
-    <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog-profile' %}">Profile</a>
-            </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog-cart' %}">Cart</a>
-        </li>
+      <!-- Right links -->
+   <div class="navbar-nav">
+              {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profil</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
+            </div>
 </div>
     <!-- Collapsible wrapper -->
   </div>

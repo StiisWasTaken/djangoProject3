@@ -7,6 +7,6 @@ urlpatterns = [
     path('parts', views.parts, name='blog-parts'),
     path('accesories',views.accesories, name='blog-accesories'),
     path('rent',views.rent, name='blog-rent'),
-    path('profile', views.profile, name='blog-profile'),
+    #path('profile', views.profile, name='blog-profile'),
     path('cart', views.cart, name='blog-cart'),
 ]
