@@ -1,4 +1,19 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<h1>Accesories!</h1>
+    <h2>Accesories</h2>
+    <div class="border-top pt-3">
+  <div class="card-group">
+ {% for Accesor in accesorieries %}
+  <div class="card">
+    <img class="card-img-top" src='blog/static/default.png', alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ Accesor.name }} </h5>
+      <p class="card-text"><small class="text-muted">Rok produkcji {{ Accesor.production_year }}</small></p>
+        <p class="card-text" style="font-weight: bold"><small class="text-muted">Cena : {{ Accesor.price }} zł</small></p>
+        <p class="card-text"><small class="text-muted">Pozostało : {{ Accesor.amount }}</small></p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+    </div>
 {% endblock %}

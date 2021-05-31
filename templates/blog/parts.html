@@ -1,4 +1,14 @@
 {% extends "blog/base.html" %}
 {% block content %}
 <h1>Parts!</h1>
+    {% for bike in bikes %}
+    {% if forloop.first %}<div class="row">{% endif %}
+    <div class="col-xs-4">
+            <a href="#">
+
+            </a>  <p class="card-text"> {{ bike.type}}</p>
+        </div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
 {% endblock %}

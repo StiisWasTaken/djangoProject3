@@ -27,3 +27,15 @@ class Bike(models.Model):
 
     def __str__(self):
         return self.name
+
+class Accesor(models.Model):
+    name=models.TextField()
+    production_year=models.DateField()
+    amount=models.IntegerField()
+    price=models.FloatField()
+    photo=models.ImageField(upload_to='accessories_photo', default='blog/static/default.png')
+    description=models.TextField()
+
+    def __str__(self):
+        return self.name
+
