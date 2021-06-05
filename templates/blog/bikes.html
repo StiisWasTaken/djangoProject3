@@ -2,10 +2,10 @@
 {% block content %}
     <h2>Rowery</h2>
     <div class="border-top pt-3">
-  <div class="card-group">
- {% for bike in bikes %}
+ {% for bike in bikes %} <div class="card-group">
+
   <div class="card">
-    <img class="card-img-top" src='blog/static/default.png', alt="Card image cap">
+      <img class="img-fluid" src="{{ bike.photo.url }}">
     <div class="card-body">
       <h5 class="card-title">{{ bike.name}}</h5>
       <p class="card-text"> {{ bike.type}}</p>
@@ -15,7 +15,7 @@
         <p class="card-text"><small class="text-muted">Pozostało : {{ bike.amount }}</small></p>
     </div>
   </div>
-{% endfor %}
-</div>
+
+</div>{% endfor %}
     </div>
 {% endblock %}

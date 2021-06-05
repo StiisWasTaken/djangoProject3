@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Post
 from .models import Bike
 from .models import Accesor
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 def home(request):
@@ -11,6 +12,15 @@ def home(request):
         'title': 'Home'
     }
     return render(request,'blog/home.html',context)
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/home.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+class PostDetailView(DetailView):
+    model = Post
 
 def bikes(request):
     context = {		'posts':Post.objects.all(),

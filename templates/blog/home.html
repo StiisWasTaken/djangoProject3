@@ -5,12 +5,17 @@
 {% for post in posts %}
     <article class="media content-section">
       <div class="media-body">
+          <div class="card-header">
         <div class="article-metadata">
+             <img class="rounded-circle article-img" width="70" src="{{ post.author.profile.image.url }}">
           <a class="mr-2" href="#">{{ post.author }}</a>
           <small class="text-muted">{{ post.date_posted }}</small>
         </div>
+          </div>
+          <div class="card-body">
         <h2><a class="article-title" href="#">{{ post.titles }}</a></h2>
         <p class="article-content">{{ post.content }}</p>
+      </div>
       </div>
 </article>
 {% endfor %}

@@ -19,7 +19,7 @@ class Bike(models.Model):
     production_year=models.DateField()
     amount=models.IntegerField()
     price=models.FloatField()
-    photo=models.ImageField(upload_to='bike_photo',default='blog/static/default.png')
+    photo=models.ImageField(upload_to='bike_photo',default='bike.jpg')
     description=models.TextField()
     wheel_size=models.FloatField()
     electric=models.BooleanField(default=False)
@@ -33,7 +33,7 @@ class Accesor(models.Model):
     production_year=models.DateField()
     amount=models.IntegerField()
     price=models.FloatField()
-    photo=models.ImageField(upload_to='accessories_photo', default='blog/static/default.png')
+    photo=models.ImageField(upload_to='accessories_photo', default='default.png')
     description=models.TextField()
 
     def __str__(self):
