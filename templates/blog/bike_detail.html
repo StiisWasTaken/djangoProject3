@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h2>{{ object.name}}</h2>
+    <div class="border-top pt-3">
+    <article class="media content-section">
+      <div class="media-body">
+          <div class="card-header">
+        <div class="article-metadata">
+
+          <a class="text-muted"> {{ object.type }}</a>
+          <small class="text-muted">{{ object.production_year }}</small>
+        </div>
+          </div>
+          <img class="img" width="855" height="445" src="{{ object.photo.url }}">
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold"><h3 class="text-muted">Cena : {{ object.price }} zł</h3></p>
+       <div><h4>Opis</h4></div>
+        <p class="article-content">{{ object.description }}</p>
+<div></div>
+              {% if object.amount < 3 %}
+            <a class="btn btn-primary btn-sm " >Ostatnie sztuki</a>
+            {% endif %}
+          <p class="article-content">Ilość : {{ object.amount }}</p>
+
+              <p class="article-content">Wielkość kół : {{ object.wheel_size }}</p>
+              <p class="article-content">Elektryczny : {{ object.electric }}</p>
+<button class="btn btn-outline-danger" >Kup Teraz</button>
+      </div>
+      </div>
+</article>
+
+    </div>
+{% endblock %}

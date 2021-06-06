@@ -46,17 +46,17 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'blog-bikes' %}">Bikes</a>
-        </li>
+       <!-- </li>
           <li class="nav-item">
           <a class="nav-link" href="{% url 'blog-parts' %}">Parts</a>
-        </li>
+        </li> -->
          <li class="nav-item">
           <a class="nav-link" href="{% url 'blog-accesories' %}">Accesories</a>
-        </li>
+        </li><!--
           <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog-rent' %}">Rent</a>
+          <a class="nav-link" href="{% url 'blog-rent' %}">Rent</a> -->
           <!-- Navbar dropdown -->
-        <li class="nav-item dropdown">
+       <!-- <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -66,7 +66,7 @@
             aria-expanded="false"
           >
             Dropdown
-          </a>
+          </a>-->
           <!-- Dropdown menu -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -87,6 +87,7 @@
       <!-- Right links -->
    <div class="navbar-nav">
               {% if user.is_authenticated %}
+                  <a class="nav-item nav-link" href="{% url 'post-create' %}">Nowy Wpis</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profil</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
@@ -113,13 +114,20 @@
     </div>
     <div class="col-md-4">
       <div class="content-section">
-        <h3>Our Sidebar</h3>
-        <p class='text-muted'>You can put any information here you'd like.
-          <ul class="list-group">
-            <li class="list-group-item list-group-item-light">Latest Posts</li>
-            <li class="list-group-item list-group-item-light">Announcements</li>
+        <h3>Nawigacja</h3>
+        <p class='text-muted'>
+          <ul class="list-group">   Witamy!
+          {% if user.is_authenticated %}
+                  <li class="list-group-item list-group-item-light">Jesteś zalogowany jako {{ user.username }}</li>
+
+              {% else %}
+                <li class="list-group-item list-group-item-light">Nie jesteś zalogowany</li>
+              {% endif %}
+          <input type=button value="Poprzednia strona" onClick="javascript:history.go(-1);">
+          <input type=button value="Ostatnio oglądany" onClick="javascript:history.go(1);">
+<!--
             <li class="list-group-item list-group-item-light">Calendars</li>
-            <li class="list-group-item list-group-item-light">etc</li>
+            <li class="list-group-item list-group-item-light">etc</li>-->
           </ul>
         </p>
       </div>

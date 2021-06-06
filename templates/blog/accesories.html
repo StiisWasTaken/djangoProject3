@@ -2,18 +2,19 @@
 {% block content %}
     <h2>Accesories</h2>
     <div class="border-top pt-3">
-  <div class="card-group">
- {% for Accesor in accesorieries %}
+ {% for Accesor in accesorieries %}<div class="card-group">
   <div class="card">
-    <img class="card-img-top" src='blog/static/default.png', alt="Card image cap">
+      <img class="img" width="855" height="445" src="{{ Accesor.photo.url }}">
     <div class="card-body">
-      <h5 class="card-title">{{ Accesor.name }} </h5>
+    <h2><a class="article-title" href="{% url 'accesories-detail' Accesor.id %}">{{ Accesor.name }}</a></h2>
+      <p class="card-text"> {{ bike.type}}</p>
       <p class="card-text"><small class="text-muted">Rok produkcji {{ Accesor.production_year }}</small></p>
         <p class="card-text" style="font-weight: bold"><small class="text-muted">Cena : {{ Accesor.price }} zł</small></p>
-        <p class="card-text"><small class="text-muted">Pozostało : {{ Accesor.amount }}</small></p>
+        <p class="card-text"><small class="text-muted">Pozostało : {{Accesor.amount }}</small></p>
     </div>
   </div>
+
+</div>
 {% endfor %}
 </div>
-    </div>
 {% endblock %}

@@ -5,9 +5,9 @@
  {% for bike in bikes %} <div class="card-group">
 
   <div class="card">
-      <img class="img-fluid" src="{{ bike.photo.url }}">
+      <img class="img" width="855" height="445" src="{{ bike.photo.url }}">
     <div class="card-body">
-      <h5 class="card-title">{{ bike.name}}</h5>
+        <h2><a class="article-title" href="{% url 'bikes-detail' bike.id %}">{{ bike.name }}</a></h2>
       <p class="card-text"> {{ bike.type}}</p>
       <p class="card-text"><small class="text-muted">Rok produkcji {{ bike.production_year }}</small></p>
         <p class="card-text" style="font-weight: bold"><small class="text-muted">Cena : {{ bike.price }} zł</small></p>
