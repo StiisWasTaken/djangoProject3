@@ -6,7 +6,7 @@
   <div class="card">
       <img class="img" width="855" height="445" src="{{ Accesor.photo.url }}">
     <div class="card-body">
-    <h2><a class="article-title" href="{% url 'accesories-detail' Accesor.id %}">{{ Accesor.name }}</a></h2>
+    <h2><a class="article-title" href="{% url 'blog-accesories' Accesor.id %}">{{ Accesor.name }}</a></h2>
       <p class="card-text"> {{ bike.type}}</p>
       <p class="card-text"><small class="text-muted">Rok produkcji {{ Accesor.production_year }}</small></p>
         <p class="card-text" style="font-weight: bold"><small class="text-muted">Cena : {{ Accesor.price }} zł</small></p>

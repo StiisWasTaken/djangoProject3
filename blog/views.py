@@ -14,16 +14,16 @@ def home(request):
     }
     return render(request,'blog/home.html',context)
 
-class PostListView(ListView):
+class WpisLista(ListView):
     model = Post
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
-class PostDetailView(DetailView):
+class WpisSzczegoly(DetailView):
     model = Post
 
-class PostCreateView(LoginRequiredMixin,CreateView):
+class WpisTworzenie(LoginRequiredMixin,CreateView):
     model = Post
     fields = ['titles','content']
 
@@ -31,7 +31,7 @@ class PostCreateView(LoginRequiredMixin,CreateView):
         form.instance.author =self.request.user
         return super().form_valid(form)
 
-class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+class WpisAktualizacja(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     model = Post
     fields = ['titles','content']
 
@@ -46,7 +46,7 @@ class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
         else:
             return False
 
-class PostDelateView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+class WpisUsun(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
     model = Post
     success_url = '/'
     def test_func(self):
@@ -63,7 +63,7 @@ def bikes(request):
 	}
     return render(request,'blog/bikes.html', context)
 
-class BikeDetailView(DetailView):
+class RowerSzczegoly(DetailView):
     model = Bike
 
 def parts(request):
@@ -79,9 +79,8 @@ def accesories(request):
                        }
     return render(request,'blog/accesories.html',context)
 
-class AccesorDetailView(DetailView):
+class AkcesoriaSzczegoly(DetailView):
     model = Accesor
-
 
 def rent(request):
     context ={          'title': 'Rent'
